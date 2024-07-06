@@ -27,4 +27,20 @@ functions:
           method: post
           cors: true
           integration: lambda
+  crear_bucket:
+    handler: crear_bucket.lambda_handler
+    events:
+      - http:
+          path: /s3/bucket/crear
+          method: put
+          cors: true
+          integration: lambda
+  crear_carpeta_bucket:
+    handler: crear_carpeta_bucket.lambda_handler
+    events:
+      - http:
+          path: /s3/bucket/crear-carpeta
+          method: put
+          cors: true
+          integration: lambda
 # HANDLERS MUST HAVE THE SAME NAME AS THE .PY FILE
